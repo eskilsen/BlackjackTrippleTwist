@@ -1,6 +1,19 @@
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+
+    align-items: center;
+}
+
 .hand-container{
-    height: 10vh;
-    width: 2vh;
-    background-color: red;
+    display: flex;
+    flex-direction: row;
 
 }
+
+h4{
+
+}
+
