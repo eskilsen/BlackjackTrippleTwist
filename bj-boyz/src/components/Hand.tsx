@@ -27,7 +27,6 @@ function Hand() {
   }, [cardHand])
 
   useEffect(() => {
-    //setCardHand(hand)
     console.log("Hand endret seg til " + cardHand)
   }, [cardHand])
 
