@@ -12,7 +12,7 @@
     font-size: 50px;
 }
 
-.paragraphs{
+.introductionHeader{
     font-size: 1.5rem;
     margin: 50px;
     font-weight: normal;
@@ -22,74 +22,48 @@
 
 }
 
-
-
 .main{
     margin-left: 5rem;
     padding: 1rem;
-}
-
-.navbar{
-    width: 3.5rem;
-    height: 100vh;
-    position: fixed;
-    background-color: #00301A;
-    font-size: 1rem;
-    padding-top: 5rem;
-    transition: 200ms ease;
-
-}
-
-
-.navbar-nav{
-    list-style: none;
-    flex-direction: column;
-    margin: 0;
-    align-items: center;
-    height: 100%;
-
-}
-
-.navbar-item{
-    width: 100%;
-}
-
-.navbar-item:last-child{
-    margin-top: auto;
-}
-
-.nav-link{
     display: flex;
-    align-items: center;
-    height: 3rem;
-    color: aliceblue;
-    text-decoration: none;
-    filter: grayscale(100%) opacity(0.7);
-    transition: 200ms;
+    flex-direction: column;
+    border: 1px solid red;
+
 }
 
-.nav-link:hover{
-    filter: grayscale(0%) opacity(1);
-    background-color: #35654d;
+.informationContainer{
+    display: flex;
+    padding: 1rem;
+
 }
 
-.link-text{
-    display: none;
-    margin-left: 1rem;
+.information{
+    background-color: #E8F3F5;
+    color: #00301A;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+   
 }
 
-.nav-link svg{
-    padding-left: 0.5rem;
+#infoSvenn{
+    border-radius: 10% 40% /50% 20%;
+    padding: 20px;
 }
 
-ul{ 
-    padding: 0;
+#infoEskil{
+    border-radius: 50% 20% / 10% 40%;
+    padding-left: 20px;
+    padding-top: 20px;
 }
 
-.navbar:hover{
-    width: 16rem;
+.informationHeader{
+    font-size: 1.2rem;
+
 }
 
-.navbar:hover .link-text{
-    display: block;
+.informationText{
+    font-size: 0.9rem;
+
 }
+
