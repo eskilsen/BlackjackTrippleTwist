@@ -10,6 +10,8 @@
     text-align: center;
     font-weight: lighter;
     font-size: 50px;
+    font-family: 'Goldman';
+    font-weight: bold;
 }
 
 .introductionHeader{
@@ -27,7 +29,7 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
+
 
 }
 
@@ -97,8 +99,26 @@
 img{
     max-width: 100%;
     max-height: 100%;
+    display: block;
+
 }
 .spacyPicture{
+    position: relative;
+    width: 75%;
+}
 
+.spacyPictureOverlay{
+    position: absolute;
+    top: 2rem;
+    color: aliceblue;
+    width: 100%;
+    transition: 0.5s ease;
+    opacity: 0;
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+}
 
+.spacyPicture:hover .spacyPictureOverlay{
+    opacity: 1;
 }

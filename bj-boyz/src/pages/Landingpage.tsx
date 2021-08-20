@@ -11,11 +11,15 @@ let url = `${endpoint}${API_KEY}`;
 function Landingpage() {
     const [picture, setPicture] = useState("");
     const [showingPicture, setShowingPicture] = useState(false);
+    const [pictureTitle, setPictureTitle] = useState("");
 
     const getSpacy = () => {
         return fetch(url)
         .then((response) => response.json())
-        .then((data) => setPicture(data.url))
+        .then((data) => {
+            setPicture(data.url)
+            setPictureTitle(data.title)
+        })
     }
 
     useEffect(() => {
@@ -56,8 +60,8 @@ function Landingpage() {
             <div className="spaceContainer">
                 <button id ="spaceButton" onClick={showPicture}> {showingPicture ? "Hide":"Show"} Space</button>
                 <div className="spacyPicture">
-                    {showingPicture ? <img src = {picture}></img> : <></>}
-                    
+                    {showingPicture ? <img src = {picture} alt="spacy picture"></img> : <></>}
+                    {showingPicture ? <div className="spacyPictureOverlay">{pictureTitle}</div> : <></>}
                 </div>
             </div>
         </div>
