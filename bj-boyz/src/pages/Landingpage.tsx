@@ -1,9 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "../components/styles/Landingpage.css";
 import Navbar from '../components/Navbar';
 
+let API_KEY = "Sbegnas5PHhXd0QUY7fZIZsdTZp5ZvwF4qN9kkOn";
+let endpoint = "https://api.nasa.gov/planetary/apod?api_key=";
+let url = `${endpoint}${API_KEY}`;
+
+
+
 function Landingpage() {
+    const [picture, setPicture] = useState("");
+    const [showingPicture, setShowingPicture] = useState(false);
+    const [pictureTitle, setPictureTitle] = useState("");
+
+    const getSpacy = () => {
+        return fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+            setPicture(data.url)
+            setPictureTitle(data.title)
+        })
+    }
+
+    useEffect(() => {
+        getSpacy();
+    }, [])
+
+
+    const showPicture = () => {
+        return setShowingPicture(!showingPicture);
+    }
+
+    
+
+    
   return (
+    
     <div className="landingpage">
         <Navbar/>
         <div className ="main">
@@ -26,7 +58,11 @@ function Landingpage() {
             </div>
 
             <div className="spaceContainer">
-                <button>Show spacy picture</button>
+                <button id ="spaceButton" onClick={showPicture}> {showingPicture ? "Hide":"Show"} Space</button>
+                <div className="spacyPicture">
+                    {showingPicture ? <img src = {picture} alt="spacy picture"></img> : <></>}
+                    {showingPicture ? <div className="spacyPictureOverlay">{pictureTitle}</div> : <></>}
+                </div>
             </div>
         </div>
     </div>
