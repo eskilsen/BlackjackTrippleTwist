@@ -1,0 +1,19 @@
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+
+    align-items: center;
+}
+
+.hand-container{
+    display: flex;
+    flex-direction: row;
+
+}
+
+h4{
+
+}
+

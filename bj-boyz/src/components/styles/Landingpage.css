@@ -1,0 +1,124 @@
+.landingpage{
+    font-size: 16px;
+    color: aliceblue;
+    margin: 0;
+    padding:0;
+
+}
+
+.title{
+    text-align: center;
+    font-weight: lighter;
+    font-size: 50px;
+    font-family: 'Goldman';
+    font-weight: bold;
+}
+
+.introductionHeader{
+    font-size: 1.5rem;
+    margin: 50px;
+    font-weight: normal;
+    text-align: center;
+    border-bottom: 2px inset rgb(56, 53, 53) ;
+    padding-bottom: 10px;
+
+}
+
+.main{
+    margin-left: 5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.informationContainer{
+    display: flex;
+    padding: 1rem;
+
+}
+
+.information{
+    background-color: #E8F3F5;
+    color: #00301A;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+   
+}
+
+#infoSvenn{
+
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+#infoEskil{
+    border-radius: 10% -10% ;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.informationHeader{
+    font-size: 1.2rem;
+
+}
+
+.informationText{
+    font-size: 0.9rem;
+
+}
+
+.spaceContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#spaceButton{
+    background-color: #E8F3F5;
+    cursor: pointer;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    border: 0;
+    color:#00301A;
+    font-family: 'Goldman';
+    margin-bottom: 1rem;
+    font-weight: lighter;
+}
+
+#spaceButton:hover{
+    opacity: 0.7;
+    box-shadow: none;
+    color: black;
+    font-weight: bold;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+
+}
+.spacyPicture{
+    position: relative;
+    width: 75%;
+}
+
+.spacyPictureOverlay{
+    position: absolute;
+    top: 2rem;
+    color: aliceblue;
+    width: 100%;
+    transition: 0.5s ease;
+    opacity: 0;
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.spacyPicture:hover .spacyPictureOverlay{
+    opacity: 1;
+}
