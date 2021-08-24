@@ -1,21 +1,18 @@
 
-html{
-    
-}
 
 body{
     background-color: #006a4e;
-    width: 100%;
-    height: 100%;
+
+
     top: 0;
     bottom: 0;
 }
 
-.background-container{
+h1{
+    margin-block-start: 0;
+}
 
-    height: 95vh;
-    margin: 2vh;
-    background-color: #006a4e;
+.background-container{
 
 }
 
@@ -23,6 +20,8 @@ body{
     color: aliceblue;
     text-align: center;
     font-family: 'Goldman';
+    padding-top: 1em;
+    padding-bottom: 2em;
 }
 
 .footer{
@@ -34,5 +33,5 @@ body{
     color: lightgray;
 
 
-    padding-top: 1vh;
+
 }
