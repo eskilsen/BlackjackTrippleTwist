@@ -3,59 +3,96 @@ import { Card, Deck, StandardDeck } from "fh-cards";
 import CardCC from './CardCC';
 import "./styles/Hand.css"
 
+import jsonData from "../deck.json";
+
 
 function Hand() {
-  
 
-  let summerizer = (cardHand: Card[]) =>{
-    let sum = 0;
-    cardHand.forEach(card => {
-      sum += parseInt((card.toString().slice(0,-1)))
+  //creates the deck from JSON-file
+  const data = JSON.parse(JSON.stringify(jsonData.cards));
+  const [deck, setDeck]: any[] = useState(data);
+  const [cardHand, setCardHand]: any[] = useState([]);
+  const [cardSum, setCardSum] = useState(0);
+  
+  let drawCard = () => {
+    if (deck.length > 0){
+      const randomIndex = Math.floor(Math.random()*deck.length);
+      console.log(randomIndex);
+      const card = deck[randomIndex];
+      deck.splice(randomIndex,1);
+      setDeck([...deck])
+      cardHand.push(card);
+    }
+  }
+
+  let summerizeCardHand = (cardHand: any[]) => {
+    let total = 0;
+    cardHand.forEach((card: any) => {
+      if (card.value !== 'A'){
+        switch (card.value)
+        {
+          case 'K':
+            total += 10;
+            break;
+          case 'Q':
+            total += 10;
+            break;
+          case 'J':
+            total += 10;
+            break;
+          default:
+            total += Number(card.value);
+        }
+      }
     });
-    return setSum(sum);
+
+    const aces = cardHand.filter((card: any) => {
+      return card.value === 'A';
+    });
+
+    aces.forEach((card: any) => {
+      if((total + 11) > 21){
+        total += 1
+      }
+      else if ((total + 11) === 21){
+        if (aces.length > 1){
+          total += 1;
+        }
+        else {
+          total += 11;
+        }
+      }
+      else{
+        total += 11;
+      }
+    });
+    setCardSum(total);
   }
 
-
-  let deck: Deck = new StandardDeck();
-  
-
-  let [cardHand, setCardHand] = useState(deck.draws(4));
-  let [sum, setSum] = useState(0);
-
-  useEffect(() => {
-    summerizer(cardHand);
-  }, [cardHand])
-
-  useEffect(() => {
-    console.log("Hand endret seg til " + cardHand)
-  }, [cardHand])
-
-  let drawCard = () =>{
-    let tempHand = [...cardHand]
-    tempHand.push(deck.draw())
-
-    console.log(deck.draw())
-    setCardHand(tempHand);
-  }
+  useEffect(() =>{
+    summerizeCardHand(cardHand);
+  })
 
   return (
     <div className = "main-container">
       <div className="hand-container">
-        {cardHand.map((item) => {
-          return(
-            <CardCC card={item} />
+        {cardHand.map((card: any, index: number) => {
+          return (
+            <CardCC key = {index}  value={card.value} suit = {card.suit}/>
           )
         })}
+        
         </div>
-        <h4 className="summerize">Sum: {sum}</h4>
-        <button onClick={() => drawCard()}>draw</button>
-      
+        <div className="sumAndDraw">
+        {cardSum > 0 ? <p className = "summerizer">Sum: {cardSum}</p> : <></>}
+        <button className = "drawButton" onClick={() => {drawCard()}}>draw</button>
+        </div>
     </div>
   );
 }
 
 
-
+/**/
 
 
 export default Hand;
