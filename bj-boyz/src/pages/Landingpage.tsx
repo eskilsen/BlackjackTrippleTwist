@@ -17,6 +17,7 @@ function Landingpage() {
         return fetch(url)
         .then((response) => response.json())
         .then((data) => {
+            console.log(data)
             setPicture(data.url)
             setPictureTitle(data.title)
         })
