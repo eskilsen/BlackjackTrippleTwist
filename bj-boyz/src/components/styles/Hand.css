@@ -3,30 +3,55 @@
     display: flex;
     flex-direction: column;
     color: aliceblue;
-
     align-items: center;
 }
 
 .hand-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
 
+    margin-bottom: 2rem;
+    height: 18rem;
+    width: 20rem;
+
+}
+
+#dealer{
+    
+
+    border-radius: 96% 4% 96% 4% / 4% 93% 7% 8%;
+    width: 60vw;
+    background-image: linear-gradient(to right top, #006a4e, #006d4e, #00704e, #00724e, #00754e, #00754e, #00754e, #00754e, #00724e, #00704e, #006d4e, #006a4e);
+}
+
+#player{
+    width: 60vw;
+    border-radius: 4% 93% 7% 8%/96% 4% 96% 4%;
+    background-image: linear-gradient(to right top, #006a4e, #006d4e, #00704e, #00724e, #00754e, #00754e, #00754e, #00754e, #00724e, #00704e, #006d4e, #006a4e);
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
 }
 
 h4{
 
 }
 
-.sumAndDraw{
 
-    position: absolute;
-    margin-top: 10rem;
+.sumAndDraw{
     display: flex;
     flex-direction: column;
-    padding: 4rem;
+
     align-items: center;
+
 }
 
+.sum{
+
+}
 .drawButton{
     font-family: "Goldman";
     float: right;
@@ -85,10 +110,17 @@ h4{
     border-radius: 10px;
 }
 
+.summerizer-hidden{
+    font-size: large;
+    top: 0;
+    position: inherit;
+    opacity: 0;
+
+}
 .summerizer{
     font-size: large;
     top: 0;
     position: inherit;
+    opacity: 1;
 
 }
-
