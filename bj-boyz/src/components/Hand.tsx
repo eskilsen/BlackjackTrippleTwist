@@ -198,12 +198,12 @@ function Hand() {
           <p className = "summerizer">Sum: {cardSum}</p> 
           :
           <p className = "summerizer-hidden"> Sum: {cardSum}</p>}
+          
         {playerIsFinished ? 
-          <div><p>Finished</p><button onClick = {() => {refreshPage()}}>Play again</button>
-          
-          
-          dette er ikke fikset........
-          <h1>The winner is: {cardSum <= 21 && cardSum > dealerSum && dealerSum <= 21 ? <>YOU!</> : <>Dealer</>}</h1></div>
+          <div className = "sumAndDraw">
+          <h1 className="finished-title">The winner is: {cardSum <= 21 && cardSum > dealerSum && dealerSum <= 21 ? <>YOU!</> : <>Dealer</>}</h1>
+          <button className="drawButton" onClick = {() => {refreshPage()}}>Play again</button>
+          </div>
           :
           <div>
           <button className = "drawButton" onClick={() => {drawCard(cardHand)}}>draw</button>
